@@ -110,7 +110,7 @@ class MasterLayout {
         return view
     }
 
-    static func stack(withAxis axis: UILayoutConstraintAxis, distribution: UIStackViewDistribution, alignment: UIStackViewAlignment, spacing: CGFloat = 0) -> UIStackView {
+    static func stack(withAxis axis: NSLayoutConstraint.Axis, distribution: UIStackView.Distribution, alignment: UIStackView.Alignment, spacing: CGFloat = 0) -> UIStackView {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = axis
@@ -120,7 +120,7 @@ class MasterLayout {
         return stackView
     }
 
-    static func imageView(withImage image: UIImage?, tint: UIColor = .white, renderingMode: UIImageRenderingMode = .alwaysTemplate, contentMode: UIViewContentMode = .scaleToFill) -> UIImageView {
+    static func imageView(withImage image: UIImage?, tint: UIColor = .white, renderingMode: UIImage.RenderingMode = .alwaysTemplate, contentMode: UIView.ContentMode = .scaleToFill) -> UIImageView {
         let imageView = UIImageView(image: image?.withRenderingMode(renderingMode))
         imageView.tintColor = tint
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -128,7 +128,7 @@ class MasterLayout {
         return imageView
     }
 
-    static func imageButton(withImage image: UIImage, renderingMode: UIImageRenderingMode = .alwaysOriginal, tint: UIColor = .mainOrange) -> UIButton {
+    static func imageButton(withImage image: UIImage, renderingMode: UIImage.RenderingMode = .alwaysOriginal, tint: UIColor = .mainOrange) -> UIButton {
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(image.withRenderingMode(renderingMode), for: .normal)
@@ -152,7 +152,7 @@ class MasterLayout {
         let string = NSAttributedString(
             string: text,
             attributes: [
-                .underlineStyle: NSUnderlineStyle.styleSingle,
+                .underlineStyle: NSUnderlineStyle.single,
                 .foregroundColor: color,
                 .font: UIFont.main(size: size, weight: .bold)
             ]
@@ -174,8 +174,8 @@ class MasterLayout {
         return field
     }
 
-    static func spinner(withStyle style: UIActivityIndicatorViewStyle = .gray) -> UIActivityIndicatorView {
-        let spinner = UIActivityIndicatorView(activityIndicatorStyle: style)
+    static func spinner(withStyle style: UIActivityIndicatorView.Style = .gray) -> UIActivityIndicatorView {
+        let spinner = UIActivityIndicatorView(style: style)
         spinner.translatesAutoresizingMaskIntoConstraints = false
         spinner.tintColor = .mainOrange
         spinner.hidesWhenStopped = true

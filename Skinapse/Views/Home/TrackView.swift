@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol TrackViewDelegate: class {
+protocol TrackViewDelegate: AnyObject {
     func trackViewDidChangeSection(_ trackView: TrackView, section: Int)
 }
 

@@ -416,7 +416,7 @@ extension AlertView {
     }
 
     private func handleSwipe(
-        state: UIGestureRecognizerState,
+        state: UIGestureRecognizer.State,
         velocity: CGPoint,
         translation: CGPoint,
         scale: (start: CGAffineTransform, end: CGAffineTransform),

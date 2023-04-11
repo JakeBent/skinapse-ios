@@ -14,7 +14,7 @@ class ProductLogCell: LogCell {
 
     static let size: CGSize = CGSize(width: Layout.smallestSide, height: 100)
 
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
         contentView.addSubview(stackView)
@@ -46,7 +46,7 @@ class SliderLogCell: LogCell {
 
     private let slider = ThreePointSlider()
 
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
         contentView.addSubview(slider)

@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol SliderDelegate: class {
+protocol SliderDelegate: AnyObject {
     func valueChanged(to index: Int)
 }
 

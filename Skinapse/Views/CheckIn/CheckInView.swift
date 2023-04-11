@@ -181,8 +181,8 @@ extension CheckInView {
         cameraView.pinToEdges(of: self)
         scrollView.layoutAs(checkInCells: cells)
 
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: .UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: .UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
 
         scrollView.delegate = self
         cameraView.delegate = self
@@ -212,7 +212,7 @@ extension CheckInView {
     }
 
     @objc private func keyboardWillShow(notification: Notification) {
-        guard let keyboardHeight = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height else { return }
+        guard let keyboardHeight = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height else { return }
         scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardHeight, right: 0)
     }
 
@@ -313,7 +313,7 @@ extension CheckInView {
         }
     }
 
-    private func handleSwipe(state: UIGestureRecognizerState, velocity: CGFloat, translation: CGFloat, rotation: (start: CGFloat, end: CGFloat), constant: (start: CGFloat, end: CGFloat), isOpening: Bool) {
+    private func handleSwipe(state: UIGestureRecognizer.State, velocity: CGFloat, translation: CGFloat, rotation: (start: CGFloat, end: CGFloat), constant: (start: CGFloat, end: CGFloat), isOpening: Bool) {
         let percentage = translation / Layout.smallestSide
 
         switch state {

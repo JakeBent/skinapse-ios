@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol CircularSliderDelegate: class {
+protocol CircularSliderDelegate: AnyObject {
     func circularSlider(_ slider: CircularSlider, didChangeValue value: Float)
 }
 
@@ -60,7 +60,7 @@ class CircularSlider: UIControl {
 
         seekerBarLayer.path = path.cgPath
         seekerBarLayer.lineWidth = 4.0
-        seekerBarLayer.lineCap = kCALineCapRound
+        seekerBarLayer.lineCap = .round
         seekerBarLayer.strokeColor = UIColor.white.cgColor
         seekerBarLayer.fillColor = UIColor.clear.cgColor
 
@@ -127,11 +127,11 @@ class CircularSlider: UIControl {
     }
 
     private func moveToPoint(point: CGPoint) -> Bool {
-        var degree = degreeForLocation(location: point)
+        let degree = degreeForLocation(location: point)
 
         func moveToClosestEdge(degree: Double) {
-            let startDistance = fabs(Float(degree) - startAngle)
-            let endDistance = fabs(Float(degree) - endAngle)
+            let startDistance = abs(Float(degree) - startAngle)
+            let endDistance = abs(Float(degree) - endAngle)
 
             if startDistance < endDistance {
                 currentAngle = startAngle

@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var splash: SplashViewController!
     var main: MainNavigationController!
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         splash = SplashViewController()
         main = MainNavigationController()
 
@@ -26,6 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         window?.rootViewController = splash
         window?.makeKeyAndVisible()
+        
+        JSONDecoder().dateDecodingStrategy = .iso8601
 
         return true
     }

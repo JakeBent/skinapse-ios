@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 
 
-protocol CameraViewDelegate: class {
+protocol CameraViewDelegate: AnyObject {
     func cameraWillDismiss(otherChanges: [AnimationInfo], dismissCamera: @escaping () -> Void)
     func cameraDidChoose(image: UIImage?)
 }
@@ -591,7 +591,7 @@ enum BrushType: String {
     }
 }
 
-protocol CameraToolViewDelegate: class {
+protocol CameraToolViewDelegate: AnyObject {
     func didSelectBrush(type: BrushType, intensity: BrushIntensity)
     func disableDrawing()
     func didMoveSlider(to value: CGFloat)

@@ -129,11 +129,11 @@ extension LogViewController {
 }
 
 class LogViewModel: NSObject, UITableViewDataSource, UITableViewDelegate {
-    var checkIns: [CheckIn] = [] {
-        didSet {
-            expanded = checkIns.map { _ in false }
-        }
-    }
+//    var checkIns: [CheckIn] = [] {
+//        didSet {
+//            expanded = checkIns.map { _ in false }
+//        }
+//    }
     var expanded: [Bool] = []
 
     func numberOfSections(in tableView: UITableView) -> Int {

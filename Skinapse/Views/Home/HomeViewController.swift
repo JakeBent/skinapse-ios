@@ -62,13 +62,17 @@ class HomeViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         layout(for: Layout.screenSize)
         setup()
+        Task {
+            await API.login()
+            
+        }
     }
 
 //    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -117,7 +121,7 @@ class HomeViewController: ViewController {
     }
 
     private func setup() {
-        nameLabel.text = "Caroline"
+        nameLabel.text = "Kayla"
         dateLabel.text = "June 29"
         streakLabel.text = "17 day streak"
         trackView.checkIns = Constants.checkIns
