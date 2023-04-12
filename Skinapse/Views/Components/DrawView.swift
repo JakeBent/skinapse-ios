@@ -114,6 +114,22 @@ class DrawView: UIView {
         func clear() {
             all.forEach { $0.clear() }
         }
+        
+        func toMap() -> [String: Any] {
+            var result: [String: Any] = [:]
+            
+//            all.forEach { intensityStack in
+//                intensityStack.all.forEach { lines in
+//                    lines.forEach { line in
+//                        result[line.type.rawValue] = [
+//                            
+//                        ]
+//                    }
+//                }
+//            }
+            
+            return result
+        }
     }
 
     private class Line: Equatable {
@@ -134,6 +150,18 @@ class DrawView: UIView {
             self.width = width
             self.opacity = opacity
         }
+        
+//        func toDictionary() -> [String: String] {
+//            return [
+//                "id": id,
+//                "type": type.rawValue,
+//                "intensity": "\(intensity.rawValue)",
+//                "path": Pathology.extract(path: path).to,
+//                "color": color,
+//                "width": width
+//                "opacity": opacity
+//            ]
+//        }
 
         static func == (lhs: Line, rhs: Line) -> Bool { return lhs.id == rhs.id }
     }

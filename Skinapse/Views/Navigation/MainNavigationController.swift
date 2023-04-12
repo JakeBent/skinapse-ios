@@ -422,11 +422,11 @@ extension AlertView {
         scale: (start: CGAffineTransform, end: CGAffineTransform),
         rotation: (start: CGAffineTransform, end: CGAffineTransform),
         isOpening: Bool
-        ) {
+    ) {
 
         let distance = sqrt(pow(translation.x, 2) + pow(translation.y, 2))
         let percentage = min(distance / Layout.expandedHeight, 1)
-
+ 
         func shouldFinish() -> Bool {
             let combined = velocity.x + velocity.y
             let shouldForPercentage = percentage > 0.35 && combined > -50

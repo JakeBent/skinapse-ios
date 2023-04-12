@@ -27,7 +27,8 @@ class HomeViewController: ViewController {
             [ "date": "August 5th" ],
         ]
     }
-
+    
+    let viewModel: HomeViewViewModel?
     let titleLabel = Layout.label(
         withColor: .mainOrange,
         font: .main(size: 36, weight: .bold),
@@ -58,21 +59,24 @@ class HomeViewController: ViewController {
     var checkInViews: [UIView] {
         return [dateLabel, streakLabel, spacer, checkInButton]
     }
+    
+    override init() {
+        viewModel = HomeViewViewModel()
+        super.init()
+        
+        viewModel?.viewController = self
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        viewModel?.fetchData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         layout(for: Layout.screenSize)
         setup()
-        Task {
-            await API.login()
-            
-        }
     }
 
 //    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -120,11 +124,15 @@ class HomeViewController: ViewController {
         }
     }
 
-    private func setup() {
-        nameLabel.text = "Kayla"
-        dateLabel.text = "June 29"
+    private func setup(user: User? = nil) {
+        nameLabel.text = user?.username
+        dateLabel.text = ""
         streakLabel.text = "17 day streak"
         trackView.checkIns = Constants.checkIns
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
 

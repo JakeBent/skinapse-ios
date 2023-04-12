@@ -46,6 +46,8 @@
 		9B26B72429E5DCB900A2B5CE /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B26B72329E5DCB900A2B5CE /* Config.swift */; };
 		9B26B72629E5E00200A2B5CE /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B26B72529E5E00200A2B5CE /* API.swift */; };
 		9B26B72829E5F5F200A2B5CE /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B26B72729E5F5F200A2B5CE /* DateFormatter.swift */; };
+		9B26B72A29E60A8B00A2B5CE /* HomeViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B26B72929E60A8B00A2B5CE /* HomeViewViewModel.swift */; };
+		9B26B72D29E70AB700A2B5CE /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B26B72C29E70AB700A2B5CE /* ViewModel.swift */; };
 		E37F78BF9524007B119DBE84 /* Pods_Skinapse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB072293465E88E91D6C07B /* Pods_Skinapse.framework */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +96,8 @@
 		9B26B72329E5DCB900A2B5CE /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		9B26B72529E5E00200A2B5CE /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		9B26B72729E5F5F200A2B5CE /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		9B26B72929E60A8B00A2B5CE /* HomeViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewViewModel.swift; sourceTree = "<group>"; };
+		9B26B72C29E70AB700A2B5CE /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,9 +165,10 @@
 		2358761B2106252100691BB9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9B26B72B29E70A7B00A2B5CE /* Base */,
 				23E9D1AE2112341800675EA0 /* CheckIn */,
 				23E9D1AB2111E9A100675EA0 /* Splash */,
-				23587644210FBE5100691BB9 /* Aux */,
+				23587644210FBE5100691BB9 /* Components */,
 				23587633210901C100691BB9 /* Log */,
 				2358761D2106256700691BB9 /* Home */,
 				2358761C2106254600691BB9 /* Navigation */,
@@ -185,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				2358761E2106257100691BB9 /* HomeViewController.swift */,
+				9B26B72929E60A8B00A2B5CE /* HomeViewViewModel.swift */,
 				2358762F21079BC400691BB9 /* TrackView.swift */,
 				235876312107A49500691BB9 /* CircularSlider.swift */,
 			);
@@ -227,16 +233,15 @@
 			path = Log;
 			sourceTree = "<group>";
 		};
-		23587644210FBE5100691BB9 /* Aux */ = {
+		23587644210FBE5100691BB9 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				2358763621090F6100691BB9 /* ViewController.swift */,
 				23587645210FBE8000691BB9 /* ThreePointSlider.swift */,
 				23E9D19B2110987C00675EA0 /* PassThroughView.swift */,
 				23A46B992122142000C92258 /* CameraView.swift */,
 				23F418F42134A9E80089E5AB /* DrawView.swift */,
 			);
-			path = Aux;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		23E9D1AB2111E9A100675EA0 /* Splash */ = {
@@ -268,6 +273,15 @@
 				9B26B72529E5E00200A2B5CE /* API.swift */,
 			);
 			path = Clients;
+			sourceTree = "<group>";
+		};
+		9B26B72B29E70A7B00A2B5CE /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				2358763621090F6100691BB9 /* ViewController.swift */,
+				9B26B72C29E70AB700A2B5CE /* ViewModel.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -404,6 +418,8 @@
 				2358763021079BC400691BB9 /* TrackView.swift in Sources */,
 				23E9D19C2110987C00675EA0 /* PassThroughView.swift in Sources */,
 				2358760A2106243A00691BB9 /* AppDelegate.swift in Sources */,
+				9B26B72A29E60A8B00A2B5CE /* HomeViewViewModel.swift in Sources */,
+				9B26B72D29E70AB700A2B5CE /* ViewModel.swift in Sources */,
 				23F418F52134A9E80089E5AB /* DrawView.swift in Sources */,
 				23A46B962120C8AA00C92258 /* CalendarView.swift in Sources */,
 				23587646210FBE8000691BB9 /* ThreePointSlider.swift in Sources */,

@@ -7,11 +7,11 @@ class API {
         return decoder
     }()
     
-    static func login() async -> ApiResponse<User>? {
+    static func me() async -> User? {
         do {
             let data = try await NetworkManager.shared.get(path: "/me")
             let result: ApiResponse<User> = try self.parseData(data)
-            return result
+            return result.data
         } catch let error {
             print(error)
             return nil;

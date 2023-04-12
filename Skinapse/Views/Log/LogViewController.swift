@@ -54,9 +54,9 @@ class LogViewController: ViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
-//            self?.navController?.showAlert(text: "Hey Poopy")
-//        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+            self?.navController?.showAlert(text: "New Alert :)")
+        }
     }
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
